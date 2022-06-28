@@ -63,9 +63,9 @@ int main() {
     }
     if (!SubSubDevicesDomainNuma.empty()) {
       sycl::context context(SubSubDevicesDomainNuma);
-      auto queue = sycl::queue{ context, SubSubDevicesDomainNuma[0] };
+      auto queue = sycl::queue{context, SubSubDevicesDomainNuma[0]};
       std::cout << "Created SubSubDevicesDomainNuma queue" << std::endl;
-      
+
       float Data = 1.0;
       float Scalar = 2.0;
       sycl::buffer<float, 1> Buf(&Data, sycl::range<1>(1));
@@ -81,4 +81,3 @@ int main() {
   }
   return 0;
 }
-
